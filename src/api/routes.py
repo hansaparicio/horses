@@ -7,12 +7,18 @@ from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
 
+@api.route('/user', methods=['POST'])
+def add_one_user():
+    pass
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
+@api.route('/horse', methods=['GET'])
+def get_all_horses():
+    pass
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
+@api.route('/horse', methods=['POST'])
+def add_one_horse():
+    pass
 
-    return jsonify(response_body), 200
+@api.route('/horse/<int:id>', methods=['GET'])
+def get_horse():
+    pass
